@@ -51,6 +51,36 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 1. Create Namespace for argocd
    		kubectl create namespace argocd
 
+2. Install ArgoCD:
+	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+3. Kubernetes creates:
+
+ArgoCD server
+Repo server
+Redis
+Controller
+UI
+
+4. Check pods:
+     kubectl get pods -n argocd
+
+5. Expose ArgoCD UI
+   	kubectl get svc -n argocd
+
+6. argocd-server ClusterIP Change it to LoadBalancer:
+   	kubectl patch svc argocd-server \
+-n argocd \
+-p '{"spec": {"type": "LoadBalancer"}}'
+
+7. Check arggocd service:
+   	kubectl get svc -n argocd
+
+8. username : admin and to Get Default Password
+   kubectl -n argocd \
+get secret argocd-initial-admin-secret \
+-o jsonpath="{.data.password}" | base64 -d
+
 
 	
 	 
