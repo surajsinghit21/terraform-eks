@@ -1,3 +1,6 @@
+<img width="1356" height="586" alt="argocd" src="https://github.com/user-attachments/assets/9b87aa50-d7f9-4fc8-b765-944733e2be19" />
+
+
 # Terraform EKS with NGINX, Ingress Controller, and ArgoCD
 
 This project contains Terraform configuration to provision an EKS cluster in AWS and deploy NGINX using Kubernetes manifests, Ingress Controller, Helm, and ArgoCD.
